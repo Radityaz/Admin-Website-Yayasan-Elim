@@ -1,0 +1,94 @@
+@font-face {
+    font-family: poppins;
+    src: url('/font/Poppins-regular.ttf');
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url('/font/Poppins-Bold.ttf');
+}
+
+* {
+    outline: 1px solid red;
+    font-family: poppins;
+}
+
+
+
+.deco-bg {
+    /* background: url('/image/deco-bg.jpg'); */
+    background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)), url('/image/deco-bg.jpg'); 
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+/* Rectangle 3463267 */
+
+/* position: absolute;
+width: 1912px;
+height: 689.24px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)), url(Screenshot 2023-11-09 183544.png); */
+
+
+/* font-family: poppins-bold; */
+
+.hr1 {
+    border: 2px solid white;
+    opacity: 100%;
+}
+
+.hr2 {
+    border: 2px solid black;
+    opacity: 100%;
+
+}
+
+.hit-border {
+    position: relative;
+    left: -5px;
+    
+}
+
+.hit-border-bottom {
+    position: relative;
+    bottom: -4px;
+    
+}
+
+.button-hover {
+    width: 10%;
+    background: #2252AB;
+    transition: 0.3s ease;
+}
+
+.button-hover:hover {
+    width: 12%;
+    background-color: black;
+}
+
+.button-hover-signup {
+    height: 50px; 
+    background: #2252AB;
+    transition: 0.3s ease;
+}
+
+.button-hover-signup:hover {
+    height: 50px; 
+    background: black;
+}
+
+.eye-hover {
+    background-color: #2252AB;
+    outline: 2px solid #2252AB;
+    transition: 0.3s ease;
+}
+
+.eye-hover:hover {
+    background-color: black;
+    outline: 2px solid black;
+
+}
