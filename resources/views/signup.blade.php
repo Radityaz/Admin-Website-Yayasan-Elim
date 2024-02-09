@@ -51,7 +51,7 @@
                         <label class="ms-2" style="font-size: 12px" for="stay">Stay Sign Up</label>
                     </div>
                 </div>
-                <a href="/main" class="text-decoration-none button-hover-signup w-100">
+                <a href="/article" class="text-decoration-none button-hover-signup w-100">
                     <button class="w-100 h-100 border-0 bg-transparent d-flex align-items-center justify-content-between " >
                         <h1 class="text-uppercase hit-border-bottom text-white" style="font-family: poppins-bold"  >Enter Code</h1>
                         <img src="/image/next-white.png" height="70" width="70" alt="">

@@ -9,8 +9,9 @@
 }
 
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     font-family: poppins;
+    overflow: hidden;
 }
 
 
@@ -50,6 +51,7 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
 .hit-border {
     position: relative;
     left: -5px;
+    top: -2px;
     
 }
 
@@ -67,6 +69,16 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
 
 .button-hover:hover {
     width: 12%;
+    background-color: black;
+}
+
+.search-button {
+    background: #2252AB;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.search-button:hover {
     background-color: black;
 }
 
@@ -91,4 +103,45 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
     background-color: black;
     outline: 2px solid black;
 
+}
+
+.top-section {
+    border: 3px solid #2252AB;
+    border-left: 8px solid #2252AB;
+}
+
+.plus-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 60px;
+    width: 60px;
+    
+}
+
+/* .article-property {
+    overflow-y: scroll;
+    height: 100%;
+} */
+
+
+/* === Formula === */
+.article-property {
+    padding: 1%;
+    overflow-y: auto; /* Membuat elemen di dalamnya dapat di-scroll */
+    height: 100vh; /* Tinggi sesuaikan dengan tinggi layar */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.box {
+    height: 35vh;
+    border-radius: 12px;
+    
+}
+
+
+.article-image {
+    border-bottom: 5px solid #2252AB;
 }
