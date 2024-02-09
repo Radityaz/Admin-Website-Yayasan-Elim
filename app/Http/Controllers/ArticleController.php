@@ -13,4 +13,29 @@ class ArticleController extends Controller
     
         return view('content.article', compact('post','page'));
     }
+
+
+    public function search(Request $request)
+    {
+        $page = 'article';
+    
+        $title = $request->input('title');
+        $author = $request->input('author');
+    
+        $post = Articletable::query();
+    
+        if ($title) {
+            $post->where('title', 'LIKE', "%{$title}%");
+        }
+    
+        if ($author) {
+            $post->orWhere('author', 'LIKE', "%{$author}%");
+        }
+    
+        $post = $post->get();
+    
+        return view('content.article', compact('post', 'page'));
+    }
+    
+    
 }

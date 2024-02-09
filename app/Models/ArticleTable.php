@@ -9,4 +9,13 @@ class ArticleTable extends Model
 {
     use HasFactory;
     protected $table = 'article';
+
+    public function scopeSearch($query, $term)
+    {
+        $query->where(function ($query) use ($term) {
+            $query->where('title', 'LIKE', "%{$term}%")
+                ->orWhere('author', 'LIKE', "%{$term}%");
+        });
+    }
+
 }

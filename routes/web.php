@@ -35,6 +35,7 @@ Route::get('/signup', function () {
 // });
 
 Route::get('/article', [ArticleController::class, 'index']);
+Route::get('/article/search', [ArticleController::class, 'search']);
 
 
 Route::get('/draft', function () {

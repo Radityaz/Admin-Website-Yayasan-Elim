@@ -126,14 +126,26 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
 
 
 /* === Formula === */
-.article-property {
+/* .article-property {
     padding: 1%;
-    overflow-y: auto; /* Membuat elemen di dalamnya dapat di-scroll */
-    height: 100vh; /* Tinggi sesuaikan dengan tinggi layar */
+    overflow-y: auto; 
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
+} */
+
+.article-property {
+    padding: 0.5%;
+    padding-bottom: 5%;
+    overflow-y: auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    height: 75vh;
 }
+
 
 .box {
     height: 35vh;
