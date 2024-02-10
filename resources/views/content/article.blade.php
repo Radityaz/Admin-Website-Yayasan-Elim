@@ -38,8 +38,16 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ $article->id }}">
-                        <li><button class="dropdown-item" type="button" id="actionDropdown{{ $article->id }}">View</button></li>
-                        <li><button class="dropdown-item" type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button></li>
+                        <li>
+                            <a class="text-decoration-none" href="/article/{{ $article->id }}">
+                                <button class="dropdown-item" type="button" id="actionDropdown{{ $article->id }}">View</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/edit/{{ $article->id }}">
+                                <button class="dropdown-item" type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button>
+                            </a>
+                        </li>
                         <li><button class="dropdown-item" type="button" id="somethingElseDropdown{{ $article->id }}">Delete</button></li>
                       </ul>
                 </div>

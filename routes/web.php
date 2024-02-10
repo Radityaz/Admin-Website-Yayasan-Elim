@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AddController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleDetailController;
+use App\Http\Controllers\ArticleEditController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +38,7 @@ Route::get('/signup', function () {
 
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/article/search', [ArticleController::class, 'search']);
+Route::get('/article/{id}', [ArticleDetailController::class, 'index']);
 
 
 Route::get('/draft', function () {
@@ -57,4 +60,13 @@ Route::get('/add', function () {
 });
 
 Route::post('/add/post', [AddController::class, 'add']);
+
+Route::get('/edit/{id}', [ArticleEditController::class, 'index']);
+Route::post('/edit/update/{id}', [ArticleEditController::class, 'update']);
+
+
+
+
+
+
 

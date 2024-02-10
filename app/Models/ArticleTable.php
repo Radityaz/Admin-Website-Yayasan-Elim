@@ -9,6 +9,7 @@ class ArticleTable extends Model
 {
     use HasFactory;
     protected $table = 'article';
+    protected $guarded = [];
 
     public function scopeSearch($query, $term)
     {
