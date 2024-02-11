@@ -11,36 +11,38 @@
 <body>
     <div class="container">
         <h1 class="fs-1 text-uppercase hit-border m-0 p-0 mb-1" style="line-height: 30px; font-family: poppins-bold; color: #2252AB" >
-            ADD <br>
+            EDIT <br>
             Page
         </h1>
         <p class="ms-1" style="font-size: 10px; width: 15%" >
             Yorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <form action="/add/post" method="POST" enctype="multipart/form-data">
+        <form action="/draftedit/update/{{ $article->id }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="title">Title</label>
-            <input id="title" name="title" type="text">
+            <input id="title" value="{{ $article->title }}" name="title" type="text">
             <br>
             <label for="author">author</label>
-            <input id="author" name="author" type="text">
+            <input id="author" value="{{ $article->author }}" name="author" type="text">
             <br>
             <label for="image">image</label>
-            <input id="image" name="image" type="file">
+            <input id="image" value="{{ $article->title }}" name="image" type="file">
             <br>
             <label for="content">content</label>
-            <input id="content" name="content" type="text">
+            <textarea id="content" name="content" type="text">
+                {{ $article->content }}
+            </textarea>
             <br>
-            <label for="visibility">visibility</label>
+            {{-- <label for="visibility">visibility</label>
             <select name="status" id="visibility">
                 <option value="Public">Public</option>
                 <option value="Private">Private</option>
 
-            </select>
+            </select> --}}
             <br>
             <button class="btn btn-primary" type="submit" name="submitType" value="submit">Submit</button>
-            <button class="btn btn-primary" type="submit" name="submitType" value="draft">Send To Draft</button>
-
+            <button class="btn btn-primary" type="submit" name="submitType" value="draft">Publish Article</button>
+            
             </form>
     </div>
 

@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\ArticleTable;
 use Illuminate\Http\Request;
 
-class ArticleEditController extends Controller
+class DraftEditController extends Controller
 {
     public function index ($id) {
         $article = ArticleTable::find($id);
 
 
-        return view('edit')->with([ 'article' => $article]);
+        return view('editdraft')->with([ 'article' => $article]);
     }
 
     public function update ($id, Request $request) {
@@ -31,7 +31,7 @@ class ArticleEditController extends Controller
                 'author' => $request->author,
                 'image' => $image,
                 'content' => $request->content,
-                'status' => $request->status,
+                'status' => 'Draft',
     
             ]);
         } elseif ($request->input('submitType') === 'draft') {
@@ -40,11 +40,11 @@ class ArticleEditController extends Controller
                 'author' => $request->author,
                 'image' => $image,
                 'content' => $request->content,
-                'status' => 'Draft',
+                'status' => 'Public',
     
             ]);
         }
 
-        return redirect('/article');
+        return redirect('/draft');
     }
 }

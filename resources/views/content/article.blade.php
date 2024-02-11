@@ -14,13 +14,21 @@
     <form action="/article/search" method="get">
         <section class="container-fluid">
             <section class="row mt-3" style="height: 35px" >
-                <div class="col-5 ps-0 ">
+                <div class="col-3 ps-0 ">
                     <input class="w-100 h-100 ps-2" name="title" placeholder="Search title here..." type="text" style="font-size: 15px; border: 2px solid black " >
                 </div>
-                <div class="col-5 ps-0 ">
+                <div class="col-3 ps-0 ">
                     <input class="w-100 h-100 ps-2" name="author" placeholder="search author here..." type="text" style="font-size: 15px; border: 2px solid black " >
                 </div>
-                <div class="col-2 px-0 ">
+                <div class="col-3 ps-0 ">
+                    <select class="w-100 h-100" name="status"  style="font-size: 15px; border: 2px solid black " >
+                        <option value="">All</option>
+                        <option value="Public">Public</option>
+                        <option value="Private">Private</option>
+                        <option value="Draft">Draft</option>
+                    </select>
+                </div>
+                <div class="col-3 px-0 ">
                     <button class="w-100 h-100 text-uppercase search-button" style="font-family: poppins-bold;"  >Search</button>
                 </div>
             </section>
@@ -38,17 +46,17 @@
                         <i class="fas fa-ellipsis-v"></i>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ $article->id }}">
-                        <li>
-                            <a class="text-decoration-none" href="/article/{{ $article->id }}">
-                                <button class="dropdown-item" type="button" id="actionDropdown{{ $article->id }}">View</button>
+                        <li class="dropdown-hover" >
+                            <a class="text-decoration-none" href="/article/{{ $article->id}}">
+                                <button class="dropdown-item" style="font-size: 15px;"  type="button" id="actionDropdown{{ $article->id }}">View</button>
                             </a>
                         </li>
-                        <li>
-                            <a href="/edit/{{ $article->id }}">
-                                <button class="dropdown-item" type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button>
+                        <li class="dropdown-hover" >
+                            <a class="text-decoration-none" href="/edit/{{ $article->id }}">
+                                <button class="dropdown-item" style="font-size: 15px;"  type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button>
                             </a>
                         </li>
-                        <li><button class="dropdown-item" type="button" id="somethingElseDropdown{{ $article->id }}">Delete</button></li>
+                        <li class="dropdown-hover" ><button class="dropdown-item" style="font-size: 15px;"  type="button" id="somethingElseDropdown{{ $article->id }}">Delete</button></li>
                       </ul>
                 </div>
             </section>

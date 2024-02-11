@@ -5,19 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\ArticleTable;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class DraftController extends Controller
 {
     public function index (Request $request) {
-        $post = ArticleTable::all();
-        $page = 'article';
+        // $post = ArticleTable::all();
+        $post = ArticleTable::where('status', 'Draft')->get();
+        $page = 'draft';
     
-        return view('content.article', compact('post','page'));
+        return view('content.draft', compact('post','page'));
     }
-
 
     public function search(Request $request)
     {
-        $page = 'draft';
+        $page = 'article';
     
         $title = $request->input('title');
         $author = $request->input('author');
@@ -40,8 +40,6 @@ class ArticleController extends Controller
     
         $post = $post->get();
     
-        return view('content.article', compact('post', 'page'));
+        return view('content.draft', compact('post', 'page'));
     }
-    
-    
 }
