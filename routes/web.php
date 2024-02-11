@@ -4,6 +4,9 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleDetailController;
 use App\Http\Controllers\ArticleEditController;
+use App\Http\Controllers\DraftController;
+use App\Http\Controllers\DraftDetailController;
+use App\Http\Controllers\DraftEditController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,12 +44,22 @@ Route::get('/article/search', [ArticleController::class, 'search']);
 Route::get('/article/{id}', [ArticleDetailController::class, 'index']);
 
 
-Route::get('/draft', function () {
+// Route::get('/draft', function () {
 
-    $page = 'draft';
+//     $page = 'draft';
 
-    return view('content.draft', compact('page'));
-});
+//     return view('content.draft', compact('page'));
+// });
+
+Route::get('/draft', [DraftController::class, 'index']);
+Route::get('/draft/{id}', [DraftDetailController::class, 'index']);
+Route::get('/draft/search', [DraftController::class, 'search']);
+Route::get('/draftedit/{id}', [DraftEditController::class, 'index']);
+Route::post('/draftedit/update/{id}', [DraftEditController::class, 'update']);
+
+
+
+
 
 Route::get('/trash', function () {
 

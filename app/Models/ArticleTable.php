@@ -15,8 +15,10 @@ class ArticleTable extends Model
     {
         $query->where(function ($query) use ($term) {
             $query->where('title', 'LIKE', "%{$term}%")
-                ->orWhere('author', 'LIKE', "%{$term}%");
+                ->where('author', 'LIKE', "%{$term}%")
+                ->where('status', 'LIKE', "%{$term}%");
         });
+        
     }
 
 }

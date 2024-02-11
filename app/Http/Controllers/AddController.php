@@ -16,27 +16,33 @@ class AddController extends Controller
         $file_name = $request->image->getClientOriginalName();
         $image = $request->image->storeAs('image', $file_name,'public');
 
-        // $request->validate([
-        //     'title' => 'required|string|max:100',
-        //     'author' => 'required|string|max:100',
-        //     // 'image' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:2048',
-        //     'description' => 'required|string|max:300',
-        //     'content' => 'required|string',
-        // ]);
+        if ($request->input('submitType') === 'submit') {
+            $data = new ArticleTable();
+            $data->title = $request->title;
+            $data->author = $request->author;
+            $data->image = $image;
+            $data->content = $request->content;
+            $data->status = $request->status;
+            $data->date = $DateNow->format('d F Y');
+        } elseif ($request->input('submitType') === 'draft') {
+            $data = new ArticleTable();
+            $data->title = $request->title;
+            $data->author = $request->author;
+            $data->image = $image;
+            $data->content = $request->content;
+            $data->status = 'Draft';
+            $data->date = $DateNow->format('d F Y');
+        }
 
-        $data = new ArticleTable();
-        $data->title = $request->title;
-        $data->author = $request->author;
-        $data->image = $image;
-        $data->content = $request->content;
-        $data->status = 'Public';
-        $data->date = $DateNow->format('d F Y');
+        // $data = new ArticleTable();
+        // $data->title = $request->title;
+        // $data->author = $request->author;
+        // $data->image = $image;
+        // $data->content = $request->content;
+        // $data->status = $request->status;
+        // $data->date = $DateNow->format('d F Y');
 
-
-    
         $data->save();
-    
-    
         return redirect('/article')->with('success', 'Data berhasil ditambahkan!');
 
     }

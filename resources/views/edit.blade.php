@@ -33,7 +33,15 @@
                 {{ $article->content }}
             </textarea>
             <br>
-            <button class="btn btn-primary" type="submit">Submit</button>
+            <label for="visibility">visibility</label>
+            <select name="status" id="visibility">
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+
+            </select>
+            <br>
+            <button class="btn btn-primary" type="submit" name="submitType" value="submit">Submit</button>
+            <button class="btn btn-primary" type="submit" name="submitType" value="draft">Send To Draft</button>
             
             </form>
     </div>
