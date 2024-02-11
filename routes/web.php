@@ -7,6 +7,8 @@ use App\Http\Controllers\ArticleEditController;
 use App\Http\Controllers\DraftController;
 use App\Http\Controllers\DraftDetailController;
 use App\Http\Controllers\DraftEditController;
+use App\Http\Controllers\TrashController;
+use App\Http\Controllers\TrashDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,12 +63,21 @@ Route::post('/draftedit/update/{id}', [DraftEditController::class, 'update']);
 
 
 
-Route::get('/trash', function () {
+// Route::get('/trash', function () {
 
-    $page = 'trash';
+//     $page = 'trash';
 
-    return view('content.trash', compact('page'));
-});
+//     return view('content.trash', compact('page'));
+// });
+
+Route::post('/trash/{id}', [TrashController::class, 'trash']);
+Route::get('/trash', [TrashController::class, 'index']);
+Route::get('/trashdetail/{id}', [TrashDetailController::class, 'index']);
+Route::post('/trash/restore/{id}', [TrashController::class, 'restore']);
+Route::post('/delete/{id}', [TrashController::class, 'delete']);
+
+
+
 
 Route::get('/add', function () {
     return view('add');

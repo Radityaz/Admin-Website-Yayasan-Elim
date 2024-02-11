@@ -22,7 +22,7 @@ class AddController extends Controller
             $data->author = $request->author;
             $data->image = $image;
             $data->content = $request->content;
-            $data->status = $request->status;
+            $data->status = 'Public';
             $data->date = $DateNow->format('d F Y');
         } elseif ($request->input('submitType') === 'draft') {
             $data = new ArticleTable();

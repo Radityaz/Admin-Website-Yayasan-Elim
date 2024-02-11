@@ -48,7 +48,12 @@
                                 <button class="dropdown-item" style="font-size: 15px;"  type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button>
                             </a>
                         </li>
-                        <li class="dropdown-hover" ><button class="dropdown-item" style="font-size: 15px;"  type="button" id="somethingElseDropdown{{ $article->id }}">Delete</button></li>
+                        <li class="dropdown-hover" >
+                            <form action="/trash/{{$article->id}}" method="POST">
+                                @csrf
+                                <button class="dropdown-item" style="font-size: 15px;" type="submit"  type="button" id="somethingElseDropdown{{ $article->id }}">Remove</button>
+                            </form>
+                        </li>
                       </ul>
                 </div>
             </section>
@@ -64,9 +69,9 @@
         @endforeach
     </section>
     
-    <div class="plus-button" >
+    {{-- <div class="plus-button" >
         <a class="w-100 h-100" href="/add">
             <button class="w-100 h-100 rounded-circle search-button " >+</button>
         </a>
-    </div>
+    </div> --}}
 @endsection

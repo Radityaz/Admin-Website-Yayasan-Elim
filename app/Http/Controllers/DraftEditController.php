@@ -43,6 +43,15 @@ class DraftEditController extends Controller
                 'status' => 'Public',
     
             ]);
+        } elseif ($request->input('submitType') === 'trash') {
+            $article->update([
+                'title' => $request->title,
+                'author' => $request->author,
+                'image' => $image,
+                'content' => $request->content,
+                'status' => 'Trash',
+    
+            ]);
         }
 
         return redirect('/draft');

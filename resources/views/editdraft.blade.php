@@ -42,6 +42,7 @@
             <br>
             <button class="btn btn-primary" type="submit" name="submitType" value="submit">Submit</button>
             <button class="btn btn-primary" type="submit" name="submitType" value="draft">Publish Article</button>
+            <button class="btn btn-danger" type="submit" name="submitType" value="trash">Remove Article</button>
             
             </form>
     </div>

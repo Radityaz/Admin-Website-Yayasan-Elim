@@ -9,7 +9,7 @@ class DraftController extends Controller
 {
     public function index (Request $request) {
         // $post = ArticleTable::all();
-        $post = ArticleTable::where('status', 'Draft')->get();
+        $post = ArticleTable::where('status', 'Draft')->get();  
         $page = 'draft';
     
         return view('content.draft', compact('post','page'));

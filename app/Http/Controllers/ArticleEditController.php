@@ -31,7 +31,7 @@ class ArticleEditController extends Controller
                 'author' => $request->author,
                 'image' => $image,
                 'content' => $request->content,
-                'status' => $request->status,
+                'status' => 'Public',
     
             ]);
         } elseif ($request->input('submitType') === 'draft') {
@@ -41,6 +41,15 @@ class ArticleEditController extends Controller
                 'image' => $image,
                 'content' => $request->content,
                 'status' => 'Draft',
+    
+            ]);
+        } elseif ($request->input('submitType') === 'trash') {
+            $article->update([
+                'title' => $request->title,
+                'author' => $request->author,
+                'image' => $image,
+                'content' => $request->content,
+                'status' => 'Trash',
     
             ]);
         }

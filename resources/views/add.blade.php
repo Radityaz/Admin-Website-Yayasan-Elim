@@ -31,12 +31,12 @@
             <label for="content">content</label>
             <input id="content" name="content" type="text">
             <br>
-            <label for="visibility">visibility</label>
+            {{-- <label for="visibility">visibility</label>
             <select name="status" id="visibility">
                 <option value="Public">Public</option>
                 <option value="Private">Private</option>
 
-            </select>
+            </select> --}}
             <br>
             <button class="btn btn-primary" type="submit" name="submitType" value="submit">Submit</button>
             <button class="btn btn-primary" type="submit" name="submitType" value="draft">Send To Draft</button>

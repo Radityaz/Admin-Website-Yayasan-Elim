@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     public function index (Request $request) {
-        $post = ArticleTable::all();
+        // $post = ArticleTable::all();
+        $post = ArticleTable::whereIn('status', ['Draft', 'Public'])->get();
         $page = 'article';
     
         return view('content.article', compact('post','page'));

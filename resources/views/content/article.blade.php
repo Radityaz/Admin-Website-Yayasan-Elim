@@ -24,7 +24,6 @@
                     <select class="w-100 h-100" name="status"  style="font-size: 15px; border: 2px solid black " >
                         <option value="">All</option>
                         <option value="Public">Public</option>
-                        <option value="Private">Private</option>
                         <option value="Draft">Draft</option>
                     </select>
                 </div>
@@ -56,7 +55,12 @@
                                 <button class="dropdown-item" style="font-size: 15px;"  type="button" id="anotherActionDropdown{{ $article->id }}">Edit</button>
                             </a>
                         </li>
-                        <li class="dropdown-hover" ><button class="dropdown-item" style="font-size: 15px;"  type="button" id="somethingElseDropdown{{ $article->id }}">Delete</button></li>
+                        <li class="dropdown-hover" >
+                            <form action="/trash/{{$article->id}}" method="POST">
+                                @csrf
+                                <button class="dropdown-item" style="font-size: 15px;" type="submit"  type="button" id="somethingElseDropdown{{ $article->id }}">Remove</button>
+                            </form>
+                        </li>
                       </ul>
                 </div>
             </section>
