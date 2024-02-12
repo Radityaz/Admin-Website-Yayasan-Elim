@@ -36,7 +36,9 @@
     <section class="container-fluid article-property mt-3">
         @foreach ($post as $article)
         <div class="box shadow-sm">
-            <section class="d-flex justify-content-between p-1 article-image" style="height: 55%; background: linear-gradient(226deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0) 30%), url('{{ asset('storage/' . $article->image) }}'); background-position: center; background-size:cover" >
+            {{-- <section class="d-flex justify-content-between p-1 article-image" style="height: 55%; background: linear-gradient(226deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0) 30%), url('{{ asset('storage/' . $article->image_id->image) }}'); background-position: center; background-size:cover" > --}}
+            <section class="d-flex justify-content-between p-1 article-image" style="height: 55%; background: linear-gradient(226deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0) 30%), url('{{ asset('storage/' . $article->ArticleImage->image) }}'); background-position: center; background-size:cover"> 
+
                 <div class="w-25 h-25 d-flex justify-content-center align-items-center rounded-pill bg-black text-white " style="font-size: 12px " >
                     {{ $article->status }}
                 </div>

@@ -47,8 +47,9 @@ class TrashController extends Controller
 
     public function delete ($id) {
         $post = ArticleTable::find($id); // Ambil entri yang ingin dihapus
-        // dd($post);
+        $post->articleImage->delete();
         $post->delete(); // Hapus entri dari database
+
 
 
         return redirect('/trash')->with('success', 'Data berhasil ditambahkan!');

@@ -21,21 +21,8 @@ class ArticleTable extends Model
         
     }
 
-    // public function article_image()
-    // {
-    //     return $this->hasOne(ArticleImage::class);
-    // }
-
-    // public function article_image()
-    // {
-    //     return $this->hasOne(ArticleImage::class);
-    // }
-
-    public function article_image()
+    public function articleImage()
     {
-        return $this->hasOne(ArticleImage::class,'image_id');
+        return $this->hasOne(ArticleImage::class, 'id');
     }
-
-
-
 }

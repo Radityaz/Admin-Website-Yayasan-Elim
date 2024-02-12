@@ -10,13 +10,15 @@ class ArticleController extends Controller
     public function index (Request $request) {
         // $post = ArticleTable::all();
         $post = ArticleTable::whereIn('status', ['Draft', 'Public'])->get();
-        $imageId = $post->image_id;
         $page = 'article';
+// Mengambil ArticleImage yang terkait dengan ArticleTable
 
-        dd($imageId);
+
+
     
         return view('content.article', compact('post','page'));
     }
+    
 
 
     public function search(Request $request)

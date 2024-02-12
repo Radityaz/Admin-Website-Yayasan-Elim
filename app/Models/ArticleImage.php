@@ -12,7 +12,6 @@ class ArticleImage extends Model
 
     public function article()
     {
-        return $this->belongsTo(ArticleTable::class, 'image_id');
+        return $this->belongsTo(ArticleTable::class);
     }
-
 }

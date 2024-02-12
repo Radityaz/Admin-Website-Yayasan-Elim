@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 300)->unique();
             $table->string('author', 100);
             $table->unsignedBigInteger('image_id')->nullable();
-            $table->foreign('image_id')->references('id')->on('article_image');
+            $table->foreign('image_id')->references('id')->on('article_image')->onDelete('cascade');
             $table->text('content');
             $table->string('status');
             $table->string('date'); 

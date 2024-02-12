@@ -21,7 +21,7 @@
             </div>
         </nav>
         <div class="container" style="margin-top: 5%; padding: 0px 200px" >
-            <img height="500px" style="object-fit: cover; border-radius: 12px;" class="w-100 mb-3 shadow-sm " src="{{ asset('storage/' . $article->image) }}" alt="">
+            <img height="400px" style="object-fit: cover; border-radius: 12px;" class="w-100 mb-3 shadow-sm " src="{{ asset('storage/' . $article->ArticleImage->image) }}" alt="">
             <p class="mb-2" style="font-family: poppins-bold" >Ditulis oleh {{ $article->author }}</p>
             <div class="mb-5" style="min-height: 50vh" >
                 {{ $article->content }}
