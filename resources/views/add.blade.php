@@ -28,6 +28,21 @@
             <label for="image">image</label>
             <input id="image" name="image" type="file">
             <br>
+            <div class="d-flex" >
+                <div>
+                    <label for="y_offset">y_offset</label>
+                    <input id="y_offset" name="y_offset" type="number">
+                </div>
+                <div>
+                    <label for="x_offset">x_offset</label>
+                    <input id="x_offset" name="x_offset" type="number">
+                </div>
+                <div>
+                    <label for="size">size</label>
+                    <input id="size" name="size" type="number">
+                </div>
+            </div>
+            <br>
             <label for="content">content</label>
             <input id="content" name="content" type="text">
             <br>

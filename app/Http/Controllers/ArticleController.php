@@ -10,7 +10,10 @@ class ArticleController extends Controller
     public function index (Request $request) {
         // $post = ArticleTable::all();
         $post = ArticleTable::whereIn('status', ['Draft', 'Public'])->get();
+        $imageId = $post->image_id;
         $page = 'article';
+
+        dd($imageId);
     
         return view('content.article', compact('post','page'));
     }
@@ -40,6 +43,8 @@ class ArticleController extends Controller
         }
     
         $post = $post->get();
+        
+
     
         return view('content.article', compact('post', 'page'));
     }

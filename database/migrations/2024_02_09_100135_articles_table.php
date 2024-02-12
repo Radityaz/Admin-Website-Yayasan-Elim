@@ -15,13 +15,20 @@ return new class extends Migration
             $table->id();
             $table->string('title', 300)->unique();
             $table->string('author', 100);
-            $table->string('image')->nullable();
+            $table->unsignedBigInteger('image_id')->nullable();
+            $table->foreign('image_id')->references('id')->on('article_image');
             $table->text('content');
             $table->string('status');
-            $table->string('date');
+            $table->string('date'); 
             $table->timestamps();
         });
+        
     }
+
+    // Schema::table('article', function (Blueprint $table) {
+    //     $table->unsignedBigInteger('image_id')->nullable(); // Membuat kolom kunci asing nullable
+    //     $table->foreign('image_id')->references('id')->on('article-image')->onDelete('set null'); // Menambahkan constraint foreign key
+    // });
 
     /**
      * Reverse the migrations.
