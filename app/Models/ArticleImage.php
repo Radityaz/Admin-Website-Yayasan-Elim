@@ -9,6 +9,7 @@ class ArticleImage extends Model
 {
     use HasFactory;
     protected $table = 'article_image';
+    protected $fillable = ['image', 'y_offset', 'x_offset', 'size'];
 
     public function article()
     {

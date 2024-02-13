@@ -65,13 +65,35 @@ class AddController extends Controller
     $articleImage->save();
 
     // Simpan data ke dalam tabel article
-    $data = new ArticleTable();
-    $data->title = $request->input('title');
-    $data->author = $request->input('author');
-    $data->content = $request->input('content');
-    $data->status = 'public';
-    $data->date = $DateNow->format('d F Y');
-    $data->image_id = $articleImage->id; // Assign ID dari artikel gambar yang baru saja disimpan
+
+    if ($request->input('submitType') === 'submit') {
+        $data = new ArticleTable();
+        $data->title = $request->input('title');
+        $data->author = $request->input('author');
+        $data->content = $request->input('content');
+        $data->status = 'Public';
+        $data->date = $DateNow->format('d F Y');
+        $data->image_id = $articleImage->id;
+        
+    } elseif ($request->input('submitType') === 'draft') {
+        $data = new ArticleTable();
+        $data->title = $request->input('title');
+        $data->author = $request->input('author');
+        $data->content = $request->input('content');
+        $data->status = 'Draft';
+        $data->date = $DateNow->format('d F Y');
+        $data->image_id = $articleImage->id;
+
+    }
+    
+
+    // $data = new ArticleTable();
+    // $data->title = $request->input('title');
+    // $data->author = $request->input('author');
+    // $data->content = $request->input('content');
+    // $data->status = 'public';
+    // $data->date = $DateNow->format('d F Y');
+    // $data->image_id = $articleImage->id; // Assign ID dari artikel gambar yang baru saja disimpan
     $data->save();
 
     return redirect('/article')->with('success', 'Data berhasil ditambahkan!');

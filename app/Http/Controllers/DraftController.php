@@ -15,9 +15,10 @@ class DraftController extends Controller
         return view('content.draft', compact('post','page'));
     }
 
-    public function search(Request $request)
-    {
-        $page = 'article';
+
+    public function search(Request $request) {
+        $page = 'draft';
+
     
         $title = $request->input('title');
         $author = $request->input('author');
@@ -35,11 +36,15 @@ class DraftController extends Controller
         }
     
         if ($status) {
-            $post->Where('status', 'LIKE', "%{$status}%");
+            $post->Where('status', $status);
         }
+
+        
     
         $post = $post->get();
+        
+
     
         return view('content.draft', compact('post', 'page'));
-    }
+}
 }

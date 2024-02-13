@@ -11,15 +11,24 @@ class ArticleTable extends Model
     protected $table = 'article';
     protected $guarded = [];
 
-    public function scopeSearch($query, $term)
-    {
-        $query->where(function ($query) use ($term) {
-            $query->where('title', 'LIKE', "%{$term}%")
-                ->where('author', 'LIKE', "%{$term}%")
-                ->where('status', 'LIKE', "%{$term}%");
-        });
+    // public function scopeSearch($query, $term)
+    // {
+    //     $query->where(function ($query) use ($term) {
+    //         $query->where('title', 'LIKE', "%{$term}%")
+    //             ->where('author', 'LIKE', "%{$term}%")
+    //             ->where('status', 'LIKE', "%{$term}%");
+    //     });
         
-    }
+    // }
+
+    public function scopeSearch($query, $term)
+{
+    $query->where(function ($query) use ($term) {
+        $query->where('title', 'LIKE', "%{$term}%")
+            ->orWhere('author', 'LIKE', "%{$term}%")
+            ->orWhere('status', 'LIKE', "%{$term}%"); // Ubah menjadi orWhere
+    });
+}
 
     public function articleImage()
     {

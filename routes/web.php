@@ -54,8 +54,8 @@ Route::get('/article/{id}', [ArticleDetailController::class, 'index']);
 // });
 
 Route::get('/draft', [DraftController::class, 'index']);
-Route::get('/draft/{id}', [DraftDetailController::class, 'index']);
 Route::get('/draft/search', [DraftController::class, 'search']);
+Route::get('/draft/{id}', [DraftDetailController::class, 'index']);
 Route::get('/draftedit/{id}', [DraftEditController::class, 'index']);
 Route::post('/draftedit/update/{id}', [DraftEditController::class, 'update']);
 

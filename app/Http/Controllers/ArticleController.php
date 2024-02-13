@@ -11,7 +11,7 @@ class ArticleController extends Controller
         // $post = ArticleTable::all();
         $post = ArticleTable::whereIn('status', ['Draft', 'Public'])->get();
         $page = 'article';
-// Mengambil ArticleImage yang terkait dengan ArticleTable
+
 
 
 
@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
     public function search(Request $request)
     {
-        $page = 'draft';
+        $page = 'article';
     
         $title = $request->input('title');
         $author = $request->input('author');

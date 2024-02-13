@@ -161,15 +161,15 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
     border-bottom: 5px solid #2252AB;
 }
 
-
-.background-view {
-    background-color: grey;
-}
-
 .addedit-wrapper {
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 3fr;
     height: 10vh;
     gap: 20px 30px;
     
+}
+
+
+.img-preview, .img-thumbnails {
+    background-repeat: no-repeat;
 }
