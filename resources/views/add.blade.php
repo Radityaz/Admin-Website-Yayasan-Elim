@@ -91,54 +91,52 @@
                     </div>
                 </section>
                 <section class="addedit-wrapper" >
-                    <section class="w-100 h-100">
-                        <label class="w-100 h-100 bg-primary " for="image">
-                            <img class="w-100 h-100" >
-                                
-                            </img>
+                    <section class="w-100 h-100 button-hover">
+                        <label class="w-100 h-100  d-flex align-items-center justify-content-center search-button" for="image">
+                            <img height="50" src="/image/add-image.png" alt="" srcset="">
                         </label>
                         <input hidden type="file" name="image" id="image" onchange="previewImage()">
                     </section>
                     <section class="w-100 h-100">
                         <p class="mb-2" >Y-Position</p>
-                        <input class="w-100 h-50 ps-2" name="y_offset" id="yposition" onchange="AdjustImage()" value="0"  style="font-size: 12px;" type="number">
+                        <input class="w-100 h-50 ps-2" name="y_offset" id="yposition" onchange="AdjustImage()" value="0"  style="font-size: 12px; border: 2px solid #2252AB;" type="number">
                     </section>
                     <section class="w-100 h-100">
                         <p class="mb-2" >X-Position</p>
-                        <input class="w-100 h-50 ps-2" name="x_offset" id="xposition" onchange="AdjustImage()" value="0" style="font-size: 12px;" type="number">
+                        <input class="w-100 h-50 ps-2" name="x_offset" id="xposition" onchange="AdjustImage()" value="0" style="font-size: 12px; border: 2px solid #2252AB;" type="number">
                         
                     </section>
                     <section class="w-100 h-100">
                         <p class="mb-2" >Zoom</p>
-                        <input class="w-100 h-50 ps-2" name="size" id="scalezoom" onchange="AdjustImage()" value="100" style="font-size: 12px;" type="number">
+                        <input class="w-100 h-50 ps-2" name="size" id="scalezoom" onchange="AdjustImage()" value="100" style="font-size: 12px; border: 2px solid #2252AB;" type="number">
                         
                     </section>
                 </section>
                 <section class="col-6 py-2">
                     <p class="mb-2" >title</p>
-                    <input class="w-100 ps-2 " name="title" style="height: 60%; font-size: 12px;" type="text">
+                    <input class="w-100 ps-2 " name="title" style="height: 60%; font-size: 12px; border: 2px solid #2252AB;" type="text">
                 </section>
                 <section class="col-6 py-2">
                     <p class="mb-2" >Author</p>
-                    <input class="w-100 ps-2 " name="author" style="height: 60%; font-size: 12px;" type="text">
+                    <input class="w-100 ps-2 " name="author" style="height: 60%; font-size: 12px; border: 2px solid #2252AB;" type="text">
                 </section>
                 <section class="col-12 pt-2">
                     <p class="mb-2" >Content</p>
-                    <textarea class="w-100 ps-2 pt-2" name="content" style="min-height: 30vh; font-size:12px;" type="text"></textarea>
+                    <textarea class="w-100 ps-2 pt-2" name="content" style="min-height: 30vh; font-size:12px; border: 2px solid #2252AB;" type="text"></textarea>
                 </section>
             </section>
         </section>
     
         <section class="container mt-4 mb-5" style="padding: 0px 15%">
             <section class="row p-0 m-0" >
-                <button class="col-6 p-2" type="submit"  name="submitType" value="submit" style="border: 2px solid #2252AB;">
-                    <h1 class="fs-1 text-start ms-1 text-uppercase hit-border m-0 p-0" style="line-height: 30px; font-family: poppins-bold; color: #2252AB; " >
+                <button class="col-6 p-2 button-hover w-50 border-0 " type="submit"  name="submitType" value="submit" style="border: 2px solid #2252AB;">
+                    <h1 class="fs-1 text-start ms-1 text-white text-uppercase hit-border m-0 p-0" style="line-height: 30px; font-family: poppins-bold; color: #2252AB; " >
                         PUBLISH <br>
                         Page
                     </h1>
                 </button>
-                <button class="col-6 p-2" type="submit" name="submitType" value="draft" style="border: 2px solid #2252AB;">
-                    <h1 class="fs-1 text-start ms-1 text-uppercase hit-border m-0 p-0" style="line-height: 30px; font-family: poppins-bold; color: #2252AB; " >
+                <button class="col-6 p-2 button-hover w-50 border-0 " type="submit" name="submitType" value="draft" style="border: 2px solid #2252AB;">
+                    <h1 class="fs-1 text-start ms-1 text-white text-uppercase hit-border m-0 p-0" style="line-height: 30px; font-family: poppins-bold; color: #2252AB; " >
                         SENT <br>
                         TO DRAFT
                     </h1>

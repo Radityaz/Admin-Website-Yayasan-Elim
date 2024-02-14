@@ -22,7 +22,7 @@
         </nav>
         <div class="container" style="margin-top: 5%; padding: 0px 200px" >
             {{-- <img height="350px" style="object-fit: cover; border-radius: 12px;" class="w-100 mb-3 shadow-sm " src="{{ asset('storage/' . $article->ArticleImage->image) }}" alt=""> --}}
-            <div class="w-100" style=" height: 350px; background: url('{{ asset('storage/' . $article->ArticleImage->image) }}'); background-position: {{ $article->ArticleImage->y_offset }}px {{ $article->ArticleImage->x_offset }}px; background-size:{{ $article->ArticleImage->size }}%;">
+            <div class="w-100" style=" height: 350px; background: url('{{ asset('storage/' . $article->ArticleImage->image) }}'); background-position: {{ $article->ArticleImage->x_offset * 2 }}px {{ $article->ArticleImage->y_offset * 2 }}px; background-size:{{ $article->ArticleImage->size }}%;">
 
             </div>
             <p class="mb-0 mt-2" style="font-family: poppins-bold" >Ditulis oleh {{ $article->author }}</p>

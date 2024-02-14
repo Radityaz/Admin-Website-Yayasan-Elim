@@ -43,6 +43,8 @@ class ArticleController extends Controller
         if ($status) {
             $post->Where('status', 'LIKE', "%{$status}%");
         }
+
+        $post->whereIn('status', ['Public', 'Draft']);
     
         $post = $post->get();
         

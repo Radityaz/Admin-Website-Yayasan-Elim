@@ -161,6 +161,16 @@ background: linear-gradient(0deg, rgba(23, 71, 128, 0.6), rgba(23, 71, 128, 0.6)
     border-bottom: 5px solid #2252AB;
 }
 
+
+.article-image:hover > div > .dropdown-hover {
+    background-color: black;
+}
+
+.dropdown-hover  {
+    background-color: transparent;
+}
+
+
 .addedit-wrapper {
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 3fr;

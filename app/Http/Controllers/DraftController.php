@@ -46,5 +46,5 @@ class DraftController extends Controller
 
     
         return view('content.draft', compact('post', 'page'));
-}
+    }
 }

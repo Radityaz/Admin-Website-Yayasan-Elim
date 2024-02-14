@@ -14,8 +14,8 @@ function previewImage() {
     imgPreview.style.display = 'block';
     // imgbox.style.background = "white"
 
-    // document.getElementById('Insert1').style.display = 'none'
-    // document.getElementById('Insert2').style.display = 'none'
+    document.getElementById('Insert1').style.display = 'none'
+    document.getElementById('Insert2').style.display = 'none'
 
 
     // const oFReader = new FileReader();

@@ -72,6 +72,7 @@ Route::post('/draftedit/update/{id}', [DraftEditController::class, 'update']);
 
 Route::post('/trash/{id}', [TrashController::class, 'trash']);
 Route::get('/trash', [TrashController::class, 'index']);
+Route::get('/trash/search', [TrashController::class, 'search']);
 Route::get('/trashdetail/{id}', [TrashDetailController::class, 'index']);
 Route::post('/trash/restore/{id}', [TrashController::class, 'restore']);
 Route::post('/delete/{id}', [TrashController::class, 'delete']);
