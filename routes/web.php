@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AddController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ArticleDetailController;
-use App\Http\Controllers\ArticleEditController;
-use App\Http\Controllers\DraftController;
-use App\Http\Controllers\DraftDetailController;
-use App\Http\Controllers\DraftEditController;
-use App\Http\Controllers\TrashController;
-use App\Http\Controllers\TrashDetailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddController;
+use App\Http\Controllers\DraftController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TrashController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DraftEditController;
+use App\Http\Controllers\ArticleEditController;
+use App\Http\Controllers\DraftDetailController;
+use App\Http\Controllers\TrashDetailController;
+use App\Http\Controllers\ArticleDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,21 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/createacc', function () {
+    return view('createacc');
+});
+
 Route::get('/signup', function () {
     return view('signup');
 });
+
+Route::get('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('userpass');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/signin', [LoginController::class, 'create']);
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/article', [ArticleController::class, 'index']);

@@ -6,7 +6,7 @@
         Page
     </h1>
     <p class="ms-1" style="font-size: 10px; width: 15%" >
-        Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Explore and manage articles seamlessly within the admin panel.
     </p>
 @endsection
 

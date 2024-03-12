@@ -5,8 +5,8 @@
         Trash <br>
         Page
     </h1>
-    <p class="ms-1" style="font-size: 10px; width: 15%" >
-        Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <p class="ms-1" style="font-size: 10px; width: 20%" >
+        Effectively manage discarded content within the administrative dashboard.
     </p>
 @endsection
 

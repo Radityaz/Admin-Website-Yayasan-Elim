@@ -9,13 +9,7 @@ class Authenticate extends Middleware
 {
     protected function redirectTo(Request $request): ?string
     {
-    if (!$request->expectsJson()) {
-        // Redirect ke halaman login dengan pesan
-        return redirect('signup')->with('message', 'invalid');
-
+        return $request->expectsJson() ? null : route('login');
     }
-    
-    return null;
-}
 
 }

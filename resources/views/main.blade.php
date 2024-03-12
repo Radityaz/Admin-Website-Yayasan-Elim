@@ -47,15 +47,16 @@
                       </li>
                     </ul>
                     <hr>
-                    <ul class="nav nav-pills flex-column">
+                    <form action="logout" method="GET" class="nav nav-pills flex-column">
+                      @csrf
                         <li class="nav-item">
-                          <a href="/signup" class="nav-link text-white" aria-current="page">
+                          <button type="submit" class="nav-link text-white" aria-current="page">
                             {{-- <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg> --}}
                             <img class="bi me-2" height="16" src="/image/signout.png" alt="" srcset="">
                             Sign Out
-                          </a>
+                          </button>
                         </li>
-                    </ul>
+                    </form>
                   </div>
             </section>
             <section class="col-10 p-2 m-0">

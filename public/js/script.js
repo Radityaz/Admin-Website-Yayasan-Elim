@@ -105,3 +105,18 @@ setInterval(() => {
 
 
 }, 0);
+
+
+function togglePassword() {
+    const eye = document.getElementById('eye1');
+    const passwordInput = document.getElementById('password');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eye.src = '/image/eye-white.png'; // Ganti dengan path ke ikon mata terbuka
+    } else {
+        passwordInput.type = 'password';
+        eye.src = '/image/eye-white-cross.png'; // Ganti dengan path ke ikon mata tertutup
+    }
+}
+

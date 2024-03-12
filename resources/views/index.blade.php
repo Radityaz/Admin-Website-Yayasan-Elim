@@ -30,10 +30,10 @@
             </h1>
             <hr class="hr2" style="width: 30px">
             <p class="w-75" style="font-size: 10px" >
-                Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                The admin page streamlines system control and management tasks effectively.
             </p>
             <p class="w-75" style="font-size: 10px" >
-                Yorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Efficiently manage site operations through the intuitive admin interface.
             </p>
         </section>
         <a class="p-0 m-0 button-hover" href="/signup">
