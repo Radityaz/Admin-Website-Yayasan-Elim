@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TrashController extends Controller
 {
     public function trash ($id, Request $request) {
         $article = ArticleTable::find($id);
+
+        $user = Auth::user();
+        $username = $user->username;
+
 
         // dd($article);
 
@@ -23,11 +28,15 @@ class TrashController extends Controller
     }
 
     public function index (Request $request) {
+
+        $user = Auth::user();
+        $username = $user->username;
+
         // $post = ArticleTable::all();
         $post = ArticleTable::where('status', 'Trash')->get();  
         $page = 'trash';
     
-        return view('content.trash', compact('post','page'));
+        return view('content.trash', compact('post','page','username'));
     }
 
     public function restore ($id, Request $request) {
@@ -59,6 +68,9 @@ class TrashController extends Controller
     public function search(Request $request) {
         $page = 'trash';
 
+        $user = Auth::user();
+        $username = $user->username;
+
     
         $title = $request->input('title');
         $author = $request->input('author');
@@ -85,6 +97,6 @@ class TrashController extends Controller
         
 
     
-        return view('content.trash', compact('post', 'page'));
+        return view('content.trash', compact('post', 'page','username'));
     }
 }

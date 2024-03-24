@@ -11,6 +11,8 @@ use App\Http\Controllers\ArticleEditController;
 use App\Http\Controllers\DraftDetailController;
 use App\Http\Controllers\TrashDetailController;
 use App\Http\Controllers\ArticleDetailController;
+use App\Http\Controllers\GuideController;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route::get('/', [MainController::class, 'index']);
+
+
 Route::get('/createacc', function () {
     return view('createacc');
 });
@@ -35,9 +40,9 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('/login', [LoginController::class, 'authenticate'])->name('login')->middleware('userpass');
+Route::post('/signin', [LoginController::class, 'create'])->name('signin');
+Route::get('/login', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::post('/signin', [LoginController::class, 'create']);
 
 
 
@@ -63,6 +68,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/trash/restore/{id}', [TrashController::class, 'restore']);
     Route::post('/delete/{id}', [TrashController::class, 'delete']);
     
+    Route::get('/guide', [GuideController::class, 'index']);
+
     
     
     

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -11,12 +12,9 @@ class ArticleController extends Controller
         // $post = ArticleTable::all();
         $post = ArticleTable::whereIn('status', ['Draft', 'Public'])->get();
         $page = 'article';
-
-
-
-
-    
-        return view('content.article', compact('post','page'));
+        $user = Auth::user();
+        $username = $user->username;
+        return view('content.article', compact('post','page','username'));
     }
     
 
@@ -28,6 +26,10 @@ class ArticleController extends Controller
         $title = $request->input('title');
         $author = $request->input('author');
         $status = $request->input('status');
+
+        $user = Auth::user();
+        $username = $user->username;
+
         
     
         $post = Articletable::query();
@@ -50,7 +52,7 @@ class ArticleController extends Controller
         
 
     
-        return view('content.article', compact('post', 'page'));
+        return view('content.article', compact('post', 'page', 'username'));
     }
     
     

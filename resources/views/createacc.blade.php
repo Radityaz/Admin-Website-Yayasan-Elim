@@ -37,17 +37,17 @@
                             <div class="col-12 p-0" style="height: 40px">
                                 <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" name="username" placeholder="Enter Username..." type="text" required>
                             </div>
+                            <div class="col-12 p-0 mt-4" style="height: 40px">
+                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" name="email" placeholder="Enter email..." type="email" required>
+                                <p style="font-size: 13px"  class="text-danger {{ session('error') == 'Invalid username or password' ? 'd-block' : 'd-none'  }}" >Invalid Code</p>
+                            </div>
                             <div class="col-11 p-0 mt-4" style="height: 40px">
-                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" id="password" name="password" placeholder="Enter Password..." type="text" required>
+                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" id="password" name="password" placeholder="Enter Password..." type="password" required>
                             </div>
                             <div class="col-1 p-0 mt-4 bg-black" onclick="togglePassword()">
                                 <a type="submit"  class="w-100 h-100 border-0 bg-transparent d-flex justify-content-center align-items-center eye-hover">
                                     <img id="eye1" src="/image/eye-white-cross.png" height="40" alt="" srcset="">
                                 </a>
-                            </div>
-                            <div class="col-12 p-0 mt-4" style="height: 40px">
-                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" name="code" placeholder="Enter code..." type="text" required>
-                                <p style="font-size: 13px"  class="text-danger {{ session('error') == 'Invalid username or password' ? 'd-block' : 'd-none'  }}" >Invalid Code</p>
                             </div>
                         </div>
                     </div>

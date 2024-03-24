@@ -35,7 +35,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 p-0" style="height: 40px">
-                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" name="username" placeholder="Enter Username..." type="text" required>
+                                <input class="w-100 h-100 ps-3" style="font-size: 13px; outline: 2px solid black" name="useremail" placeholder="Enter Username or Email..." type="text" required>
                                 <p style="font-size: 13px"  class="text-danger {{ session('error') == 'Invalid username or password' ? 'd-block' : 'd-none'  }}" >Username Invalid</p>
                             </div>
                             <div class="col-11 p-0 mt-4" style="height: 40px">
@@ -63,6 +63,6 @@
       </section>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="/js/script.js"></script>
+    <script src="/js/script.jsb"></script>
 </body>
 </html>

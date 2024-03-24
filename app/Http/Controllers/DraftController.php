@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DraftController extends Controller
 {
@@ -11,13 +12,18 @@ class DraftController extends Controller
         // $post = ArticleTable::all();
         $post = ArticleTable::where('status', 'Draft')->get();  
         $page = 'draft';
+        $user = Auth::user();
+        $username = $user->username;
     
-        return view('content.draft', compact('post','page'));
+        return view('content.draft', compact('post','page','username'));
     }
 
 
     public function search(Request $request) {
         $page = 'draft';
+
+        $user = Auth::user();
+        $username = $user->username;
 
     
         $title = $request->input('title');
@@ -45,6 +51,6 @@ class DraftController extends Controller
         
 
     
-        return view('content.draft', compact('post', 'page'));
+        return view('content.draft', compact('post', 'page','username'));
     }
 }

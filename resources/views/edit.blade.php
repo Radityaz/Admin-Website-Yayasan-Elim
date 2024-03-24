@@ -76,7 +76,7 @@
                         <label class="w-100 h-100 d-flex align-items-center justify-content-center " for="image">
                             <img height="50" src="/image/add-image.png" alt="" srcset="">
                         </label>
-                        <input hidden type="file" name="image" id="image" onchange="previewImage()">
+                        <input hidden type="file" name="image" id="image" onchange="previewImagereal()">
                     </section>
                     <section class="w-100 h-100">
                         <p class="mb-2" >Y-Position</p>

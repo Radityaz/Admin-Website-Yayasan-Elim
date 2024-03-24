@@ -20,7 +20,7 @@
                     <a href="" class="d-flex flex-column align-items-start mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <img src="/image/logo.png" height="60" width="60" alt="" srcset="">
                         <p class="p-0 m-0" style="font-size: 12px" >Welcome</p>
-                        <h3 class="p-0 m-0" style="font-family: poppins-bold" >Admin</h3>
+                        <h3 class="p-0 m-0" style="font-family: poppins-bold" >{{ $username }}</h3>
                     </a>
                     <hr style="border: 2px solid white; opacity:100%" >
                     <ul class="nav nav-pills flex-column mb-auto">
@@ -45,9 +45,16 @@
                           Trash
                         </a>
                       </li>
+                      <li>
+                        <a href="/guide" class="nav-link text-white {{ $page == 'guide' ? 'active' : '' }}  ">
+                          {{-- <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg> --}}
+                          <img class="bi me-2" height="16" src="/image/question.png" alt="" srcset="">
+                          Guide
+                        </a>
+                      </li>
                     </ul>
                     <hr>
-                    <form action="logout" method="GET" class="nav nav-pills flex-column">
+                    <form action="logout" method="get" class="nav nav-pills flex-column">
                       @csrf
                         <li class="nav-item">
                           <button type="submit" class="nav-link text-white" aria-current="page">
